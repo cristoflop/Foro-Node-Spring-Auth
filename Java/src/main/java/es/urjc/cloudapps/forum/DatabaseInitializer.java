@@ -38,9 +38,9 @@ public class DatabaseInitializer {
                 "ROLE_USER"));
 
         // Messages
-        Message message1 = this.messageRepository.save(new Message("Es algo muy interesante"));
-        Message message2 = this.messageRepository.save(new Message("Me parece algo importante para el futuro"));
-        Message message3 = this.messageRepository.save(new Message("No me interesa nada"));
+        Message message1 = this.messageRepository.save(new Message("Es algo muy interesante", user));
+        Message message2 = this.messageRepository.save(new Message("Me parece algo importante para el futuro", user));
+        Message message3 = this.messageRepository.save(new Message("No me interesa nada", user));
 
         // topics
         this.topicRepository.save(new Topic("Que opinas sobre invertir en criptomonedas??",

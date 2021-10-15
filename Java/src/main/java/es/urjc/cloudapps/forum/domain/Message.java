@@ -4,10 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -21,8 +18,12 @@ public class Message {
 
     private String value;
 
-    public Message(String value) {
+    @ManyToOne
+    private User creator;
+
+    public Message(String value, User creator) {
         this.value = value;
+        this.creator = creator;
     }
 
 }
