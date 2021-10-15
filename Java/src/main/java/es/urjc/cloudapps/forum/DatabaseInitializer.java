@@ -9,7 +9,6 @@ import es.urjc.cloudapps.forum.repository.UserRepository;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import java.util.Arrays;
 
 @Component
 public class DatabaseInitializer {

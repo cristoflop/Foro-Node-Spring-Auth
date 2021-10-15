@@ -7,6 +7,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 @Entity
@@ -34,7 +35,9 @@ public class User {
         this.nick = nick;
         this.password = password;
         this.email = email;
-        this.roles = Arrays.asList(roles);
+        this.roles = roles.length == 0 ?
+                Collections.singletonList("ROLE_USER") :
+                Arrays.asList(roles);
     }
 
 }
