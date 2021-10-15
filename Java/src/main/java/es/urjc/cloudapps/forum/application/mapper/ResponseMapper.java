@@ -1,9 +1,9 @@
 package es.urjc.cloudapps.forum.application.mapper;
 
-import es.urjc.cloudapps.forum.application.response.MessageDto;
-import es.urjc.cloudapps.forum.application.response.TopicDetailDto;
-import es.urjc.cloudapps.forum.application.response.TopicDto;
-import es.urjc.cloudapps.forum.application.response.UserDto;
+import es.urjc.cloudapps.forum.application.dto.MessageDto;
+import es.urjc.cloudapps.forum.application.dto.TopicDetailDto;
+import es.urjc.cloudapps.forum.application.dto.TopicDto;
+import es.urjc.cloudapps.forum.application.dto.UserDto;
 import es.urjc.cloudapps.forum.domain.Message;
 import es.urjc.cloudapps.forum.domain.Topic;
 import es.urjc.cloudapps.forum.domain.User;

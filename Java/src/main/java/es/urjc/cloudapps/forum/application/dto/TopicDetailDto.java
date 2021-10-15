@@ -1,4 +1,4 @@
-package es.urjc.cloudapps.forum.application.response;
+package es.urjc.cloudapps.forum.application.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

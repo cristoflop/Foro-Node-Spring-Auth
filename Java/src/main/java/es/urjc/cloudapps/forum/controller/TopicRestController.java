@@ -1,7 +1,7 @@
 package es.urjc.cloudapps.forum.controller;
 
 import es.urjc.cloudapps.forum.application.TopicService;
-import es.urjc.cloudapps.forum.application.response.TopicDto;
+import es.urjc.cloudapps.forum.application.dto.TopicDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
