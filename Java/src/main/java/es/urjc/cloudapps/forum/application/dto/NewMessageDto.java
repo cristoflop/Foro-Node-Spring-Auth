@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class MessageTopicDto {
+public class NewMessageDto {
 
     private Long topicId;
     private String creator;

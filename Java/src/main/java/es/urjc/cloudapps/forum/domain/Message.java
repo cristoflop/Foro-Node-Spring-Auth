@@ -21,9 +21,13 @@ public class Message {
     @ManyToOne
     private User creator;
 
-    public Message(String value, User creator) {
+    @ManyToOne
+    private Topic topic;
+
+    public Message(String value, User creator, Topic topic) {
         this.value = value;
         this.creator = creator;
+        this.topic = topic;
     }
 
 }

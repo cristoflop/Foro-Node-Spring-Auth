@@ -28,10 +28,9 @@ public class Topic {
     private List<Message> messages;
 
 
-    public Topic(String title, User creator, Message... messages) {
+    public Topic(String title, User creator) {
         this.title = title;
         this.creator = creator;
-        this.messages = Arrays.asList(messages);
     }
 
 }
