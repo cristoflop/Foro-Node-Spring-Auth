@@ -4,8 +4,11 @@ import es.urjc.cloudapps.forum.application.dto.NewUserDto;
 import es.urjc.cloudapps.forum.application.dto.UpdateEmailDto;
 import es.urjc.cloudapps.forum.application.dto.UserDto;
 import es.urjc.cloudapps.forum.application.mapper.ResponseMapper;
+import es.urjc.cloudapps.forum.domain.Message;
+import es.urjc.cloudapps.forum.domain.Topic;
 import es.urjc.cloudapps.forum.domain.User;
 import es.urjc.cloudapps.forum.exception.UserAlreadyExistsException;
+import es.urjc.cloudapps.forum.exception.UserCannotBeDeletedException;
 import es.urjc.cloudapps.forum.exception.UserNotFoundException;
 import es.urjc.cloudapps.forum.repository.MessageRepository;
 import es.urjc.cloudapps.forum.repository.TopicRepository;
@@ -66,6 +69,19 @@ public class UserService {
         user.setEmail(updateEmailDto.getEmail());
         User updatedUser = userRepository.save(user);
         return responseMapper.toUserDto(updatedUser);
+    }
+
+    public void deleteUser(Long userId) {
+        User user = userRepository
+                .findById(userId)
+                .orElseThrow(UserNotFoundException::new);
+        List<Topic> userTopics = topicRepository.findAllByCreator(user);
+        List<Message> userMessages = messageRepository.findAllByCreator(user);
+        if (userTopics.isEmpty() && userMessages.isEmpty()) {
+            userRepository.delete(user);
+        } else {
+            throw new UserCannotBeDeletedException();
+        }
     }
 
 }
