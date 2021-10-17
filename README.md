@@ -6,6 +6,14 @@
 
 ``docker run -d -p 27017:27017 --name mongodb -e MONGO_INITDB_DATABASE=forum mongo:5.0.3``
 
+---
+
+#### Alternativa para levantar bases de datos:
+
+``docker-compose -d -f Docker/databases-stack.yaml up --build``
+
+---
+
 #### Para generar el certificado autofirmado (https), colocar en la carpeta resources
 
 ``keytool -genkeypair -alias selfsigned -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore keystore.p12 -validity 3650``
