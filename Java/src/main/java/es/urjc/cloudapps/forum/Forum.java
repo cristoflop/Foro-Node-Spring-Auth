@@ -20,7 +20,7 @@ public class Forum {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedOriginPatterns("*")
-                        .allowedMethods("GET", "POST", "OPTIONS", "PUT", "DELETE")
+                        .allowedMethods("GET", "POST", "OPTIONS", "PUT", "PATCH", "DELETE")
                         .allowedHeaders("Authorization", "Content-Type", "X-Requested-With", "accept", "Origin",
                                 "Access-Control-Request-Method", "Access-Control-Request-Headers", "x-xsrf-token")
                         .exposedHeaders("Access-Control-Allow-Origin", "Access-Control-Allow-Credentials")
