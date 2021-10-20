@@ -2,7 +2,7 @@
 
 function simpleTopicMapper(topic) {
     if (topic instanceof Array)
-        return topic.map(item => topicMapper(item));
+        return topic.map(item => simpleTopicMapper(item));
     else
         return {id: topic._id, title: topic.title}
 }

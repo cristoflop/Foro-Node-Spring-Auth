@@ -66,15 +66,13 @@ async function init() {
     console.log('Populating database with messages');
 
     await new Message({
-        _id: new mongoose.Types.ObjectId("5fda350d3749aa4832165lop"),
-        value: "Topic 2",
+        value: "Message 1",
         topic: new mongoose.Types.ObjectId("5fda3234e9e3fd53e3907bf0"),
         creator: new mongoose.Types.ObjectId("5fda3234e9e3fd53e3907bef")
     }).save();
 
     await new Message({
-        _id: new mongoose.Types.ObjectId("5fda350d3749aa4832165pol"),
-        value: "Topic 2",
+        value: "Message 2",
         topic: new mongoose.Types.ObjectId("5fda3234e9e3fd53e3907bf0"),
         creator: new mongoose.Types.ObjectId("5fda3234e9e3fd53e3907bef")
     }).save();
