@@ -10,7 +10,7 @@
 
 #### Alternativa para levantar bases de datos:
 
-``docker-compose -d -f Docker/databases-stack.yaml up --build``
+``docker-compose -f Docker/databases-stack.yaml up -d --build``
 
 ---
 
