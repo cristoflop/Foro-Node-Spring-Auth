@@ -3,6 +3,7 @@
 const express = require('express');
 const database = require('./database.js');
 const topicRouter = require('./routes/topicRouter.js');
+const userRouter = require('./routes/userRouter.js');
 const fs = require('fs');
 const https = require('https');
 
@@ -13,6 +14,7 @@ const app = express();
 app.use(express.json());
 
 app.use('/api', topicRouter);
+app.use('/api', userRouter);
 
 async function main() {
 
