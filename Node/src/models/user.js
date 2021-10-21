@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema({
         },
         required: [true, 'Email is mandatory']
     },
-    roles: {
+    admin: {
         type: Boolean,
         required: [true, 'Admin role is mandatory to identify'],
         select: false
