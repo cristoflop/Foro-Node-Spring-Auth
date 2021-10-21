@@ -1,8 +1,10 @@
+"use strict"
+
 const express = require('express');
 const topicRouter = express.Router();
 const topicController = require('../controller/topicController.js');
 
-const {verify} = require('../auth/verifyToken');
+const {verify} = require('../auth/verifyAuth.js');
 
 topicRouter.get("/topics", topicController.findAllTopics);
 
