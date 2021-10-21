@@ -40,7 +40,7 @@ async function verify(req, res, next) {
 async function verifyAdminUser(req, res, next) {
     const user = req.user;
 
-    if (user !== undefined && user.roles.some(item => item === "ROLE_ADMIN")) {
+    if (user !== undefined && user.admin === true) {
         next();
     } else {
         res.status(403).send({

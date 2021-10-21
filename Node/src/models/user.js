@@ -27,8 +27,7 @@ const userSchema = new mongoose.Schema({
     },
     admin: {
         type: Boolean,
-        required: [true, 'Admin role is mandatory to identify'],
-        select: false
+        required: [true, 'Admin role is mandatory to identify']
     }
 });
 
