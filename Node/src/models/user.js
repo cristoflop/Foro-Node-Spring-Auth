@@ -24,6 +24,11 @@ const userSchema = new mongoose.Schema({
             message: props => `${props.value} is not a valid email`
         },
         required: [true, 'Email is mandatory']
+    },
+    roles: {
+        type: Boolean,
+        required: [true, 'Admin role is mandatory to identify'],
+        select: false
     }
 });
 

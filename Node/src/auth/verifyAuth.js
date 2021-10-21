@@ -13,22 +13,40 @@ async function verify(req, res, next) {
             throw new Error();
         }
 
+        if (req.user !== undefined) {
+            if (req.user.nick === username && req.user.password === password) {
+                next();
+            }
+        }
+
         const user = await User.findOne({
             nick: username,
             password: password
-        })
+        });
 
         if (user == null) {
             throw new Error();
         }
 
-        req.user = user
-        next()
+        req.user = user;
+        next();
     } catch (e) {
         res.status(401).send({
             error: 'Please authenticate.'
-        })
+        });
     }
 }
 
-module.exports = {verify};
+async function verifyAdminUser(req, res, next) {
+    const user = req.user;
+
+    if (user !== undefined && user.roles.some(item => item === "ROLE_ADMIN")) {
+        next();
+    } else {
+        res.status(403).send({
+            error: 'Need Permission.'
+        });
+    }
+}
+
+module.exports = {verify, verifyAdminUser};

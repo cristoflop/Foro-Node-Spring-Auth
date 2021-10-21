@@ -37,14 +37,16 @@ async function init() {
         _id: new mongoose.Types.ObjectId("5fda3234e9e3fd53e3907bed"),
         nick: "user1",
         password: "password",
-        email: "user1@email.es"
+        email: "user1@email.es",
+        admin: true
     }).save();
 
     await new User({
         _id: new mongoose.Types.ObjectId("5fda3234e9e3fd53e3907bef"),
         nick: "user2",
         password: "pass",
-        email: "user2@email.es"
+        email: "user2@email.es",
+        admin: false
     }).save();
 
     console.log('Populating database with topics');
